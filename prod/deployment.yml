@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prod-ngx
+spec:
+  selector:
+    matchLabels:
+      app: prod-ngx
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: prod-ngx
+    spec:
+      containers:
+      - name: prod-ngx
+        #image: nginx:latest
+        image: nginx:1.22.0
+        ports:
+        - containerPort: 80
