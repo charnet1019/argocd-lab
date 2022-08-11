@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dev-ngx
+spec:
+  selector:
+    matchLabels:
+      app: dev-ngx
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: dev-ngx
+    spec:
+      containers:
+      - name: dev-ngx
+        #image: nginx:latest
+        image: nginx:1.22.0
+        ports:
+        - containerPort: 80
