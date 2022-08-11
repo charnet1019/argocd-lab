@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: prod-ngx-service
+spec:
+  selector:
+    app: prod-ngx
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
